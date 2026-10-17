@@ -38,6 +38,7 @@ h1 {
 }
 
 .buttons {
+   /* Conserve quatre touches par rangée pour structurer le clavier de la calculatrice. */
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    gap: 15px;

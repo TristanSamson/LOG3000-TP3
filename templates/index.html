@@ -13,6 +13,8 @@
       <input type="text" name="display" id="display" value="{{ result }}" readonly>
 
       <div class="buttons">
+         <!-- La saisie des nombres et des opérateurs passe par 
+          les boutons afin de contrôler les caractères ajoutés à l'expression. -->
          <button type="button" class="btn" onclick="appendToDisplay('1')">1</button>
          <button type="button" class="btn" onclick="appendToDisplay('2')">02</button>
          <button type="button" class="btn" onclick="appendToDisplay('3')">3</button>
@@ -37,11 +39,22 @@
 </div>
 
 <script>
+   /**
+   * Concatène une valeur à la fin du contenu de l'écran de la calculatrice.
+   *
+   * @param {string} value - Valeur à ajouter à l'écran.
+   * @returns {void}
+   */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
 
+   /**
+   * Vide le contenu de l'écran de la calculatrice.
+   *
+   * @returns {void}
+   */
    function clearDisplay() {
       document.getElementById('display').value = '';
    }
