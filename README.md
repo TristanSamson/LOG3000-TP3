@@ -4,7 +4,7 @@ L'objectif de ce projet est de mettre en place une calculatrice fonctionnelle, c
 
 La calculatrice supporte les quatre opérations arithmétiques de base que sont l'addition, la soustraction, la multiplication et la division. 
 
-Les expressions supportées doivent être atomiques. Autrement dit, elles doivent être composées uniquement de deux nombres séparés par un opérateur. La calculatrice ne supporte pas les opérations composées ou mises l'une à la suite de l'autre. La calculatrice ne supporte pas non plus les nombres négatifs comme opérandes.
+Les expressions supportées doivent être atomiques. Autrement dit, elles doivent être composées uniquement de deux nombres séparés par un opérateur. La calculatrice ne supporte pas les opérations composées ou mises l'une à la suite de l'autre. La calculatrice ne supporte pas non plus les nombres négatifs comme opérandes, mais les résultats négatifs sont permis.
 
 ## Identification de l'équipe
 
@@ -48,6 +48,7 @@ py -m venv .venv
 - `templates/`: Répertoire contenant les gabarits utilisés par le serveur Flask pour générer l'interface de l'application.
 - `static/`: Répertoire contenant les ressources servies statiquement par Flask au navigateur, notamment les feuilles CSS.
 - `app.py`: Contrôleur permettant de recevoir et de traiter les requêtes HTTP.
+- `tests/`: Tests automatisés des opérations, des expressions, des routes HTTP et du HTML rendu.
 - `operators.py`: Fonctions utilitaires permettant d'effectuer les opérations mathématiques de la calculatrice.
 
 ## Utilisation
@@ -74,6 +75,14 @@ Pour arrêter l'application, vous pouvez effectuer `Ctrl + C` dans le terminal s
 ## Tests
 
 Les tests automatisés de l'application sont regroupés dans le répertoire `tests/`. Ils servent à vérifier le bon fonctionnement des opérations arithmétiques, la validation des expressions et le traitement des requêtes HTTP. Les cas testés couvrent les cas attendus, les cas limites et les cas hors limites.
+
+Pour exécuter les tests unitaires, vous pouvez exécuter la commande suivante dans le terminal:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+Les tests de l’interface vérifient le HTML rendu et les actions déclarées des boutons; ils n’exécutent pas JavaScript. Voir [la documentation des tests](tests/README.md) pour le détail de la couverture.
 
 ## Contribution
 
