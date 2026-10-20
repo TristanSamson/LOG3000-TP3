@@ -48,4 +48,4 @@ def divide(a,b):
     Raises:
         ZeroDivisionError: Si le deuxième opérande d'une division est nul.
     """
-    return a // b
+    return a / b
